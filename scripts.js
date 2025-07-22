@@ -1,11 +1,5 @@
-// HIDE PRELOADER AFTER 2s
+// HIDE PRELOADER AFTER 2s, SHOW HERO
 setTimeout(() => {
-  document.getElementById('preloader').classList.add('hidden');
-  document.getElementById('hero').classList.remove('hidden');
+  document.getElementById('preloader').style.display = 'none';
+  document.getElementById('hero').style.display = 'flex';
 }, 2000);
-
-// TYPEWRITER ANIMATION (Fallback)
-const typewriter = document.querySelector('.typewriter');
-if (typewriter) {
-  typewriter.style.animation = 'typing 3s steps(20) infinite';
-}
