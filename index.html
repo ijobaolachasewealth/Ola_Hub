@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @keyframes breathe {
+      0%, 100% { opacity: 0.8; transform: scale(0.98); }
+      50% { opacity: 1; transform: scale(1.02); }
+    }
+    .animated-chase {
+      animation: breathe 3s ease-in-out infinite;
+      text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+    }
+  </style>
+</head>
+<body class="bg-[#f0f0f0]">
+  <h1 class="text-4xl font-bold text-center mt-20 animated-chase text-[#FFA500]">
+    CHASE YOUR GOALS
+  </h1>
+</body>
+</html>
