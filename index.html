@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OLAHUB | Vanilla</title>
+  <title>OLAHUB | Complete</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,10 +12,58 @@
     <div class="logo">🎯</div>
   </div>
 
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <div class="nav-brand">OLAHUB</div>
+    <button id="menu-btn">☰</button>
+    <div id="menu-items">
+      <a href="#hero">Home</a>
+      <a href="#marketplace">Marketplace</a>
+      <a href="#ludo">Ludo Game</a>
+      <a href="#admin">Dashboard</a>
+    </div>
+  </nav>
+
   <!-- HERO SECTION -->
   <section id="hero">
     <h1>Your Gateway to <span class="typewriter">Social Media Accounts</span></h1>
     <button class="cta-btn">Chase Wealth Now</button>
+  </section>
+
+  <!-- MARKETPLACE -->
+  <section id="marketplace" class="hidden">
+    <h2>Marketplace</h2>
+    <div class="product-card">
+      <div class="product-image">🛒</div>
+      <h3>Instagram 10K Followers</h3>
+      <p>₦2,500</p>
+      <button>Buy Now</button>
+    </div>
+  </section>
+
+  <!-- LUDO GAME -->
+  <section id="ludo" class="hidden">
+    <h2>OLAHUB LUDO</h2>
+    <div class="ludo-board">
+      <p>Ludo Board UI Here</p>
+      <button>Join Game (₦500 Bet)</button>
+    </div>
+  </section>
+
+  <!-- ADMIN DASHBOARD -->
+  <section id="admin" class="hidden">
+    <h2>Vendor Dashboard</h2>
+    <div class="dashboard-grid">
+      <div class="sales-card">
+        <h3>Today's Sales</h3>
+        <p>₦24,500</p>
+      </div>
+      <div class="add-product">
+        <h3>Add New Product</h3>
+        <input type="text" placeholder="Product Name">
+        <button>Submit</button>
+      </div>
+    </div>
   </section>
 
   <script src="scripts.js"></script>
