@@ -1,0 +1,35 @@
+/* TAILWIND IMPORTS */
+@import url('https://cdn.tailwindcss.com');
+
+/* CUSTOM STYLES */
+:root {
+  --sky-blue: #8ECAE6;
+  --prussian-blue: #023047;
+  --ut-orange: #FB8500;
+}
+
+/* PRELOADER */
+.preloader {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-prussian-blue;
+}
+.preloader .logo {
+  @apply text-6xl font-bold text-ut-orange animate-roll;
+}
+
+/* HERO SECTION */
+#hero {
+  @apply min-h-screen flex items-center justify-center text-center;
+}
+.typewriter {
+  @apply inline-block overflow-hidden whitespace-nowrap border-r-4 border-ut-orange text-ut-orange;
+  animation: typing 3s steps(20) infinite;
+}
+
+/* ANIMATIONS */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes roll {
+  to { transform: rotate(360deg); }
+}
