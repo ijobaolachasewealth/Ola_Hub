@@ -1,44 +1,89 @@
-/* TAILWIND FALLBACK + CUSTOM CSS */
-@import url('https://cdn.tailwindcss.com');
-
+/* COLORS */
 :root {
-  --sky-blue: #8ECAE6;
   --prussian-blue: #023047;
   --ut-orange: #FB8500;
+  --white: #ffffff;
+}
+
+/* RESET */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 /* PRELOADER */
-.preloader {
+#preloader {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: var(--prussian-blue);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 50;
+  align-items: center;
+  z-index: 100;
+}
+
+#preloader .logo {
+  font-size: 4rem;
+  color: var(--ut-orange);
+  animation: roll 2s linear infinite;
 }
 
 /* HERO SECTION */
 #hero {
   min-height: 100vh;
+  background: var(--prussian-blue);
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
+  color: var(--white);
+  padding: 2rem;
 }
 
-/* BUTTON */
+#hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid var(--ut-orange);
+  animation: typing 3s steps(20) infinite;
+}
+
 .cta-btn {
   background: var(--ut-orange);
   color: var(--prussian-blue);
-  padding: 0.75rem 2rem;
-  border-radius: 50px;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  font-size: 1.125rem;
-  animation: pulse 2s infinite;
+  border-radius: 50px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+}
+
+.cta-btn:hover {
+  opacity: 0.9;
+}
+
+/* ANIMATIONS */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes roll {
+  to { transform: rotate(360deg); }
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
