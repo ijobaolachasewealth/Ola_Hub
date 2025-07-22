@@ -3,20 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OLAHUB TEST</title>
-  <!-- TAILWIND CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>OLAHUB | Complete</title>
+  <!-- TAILWIND CSS (BULLETPROOF LOAD) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sky-blue': '#8ECAE6',
+            'blue-green': '#219EBC',
+            'prussian-blue': '#023047',
+            'selective-yellow': '#FFB703',
+            'ut-orange': '#FB8500',
+          },
+          animation: {
+            'typing': 'typing 3s steps(20) infinite',
+            'roll': 'roll 2s linear infinite',
+          },
+          keyframes: {
+            typing: { from: { width: '0' }, to: { width: '100%' } },
+            roll: { '0%': { transform: 'rotate(0deg)' }, '100%': { transform: 'rotate(360deg)' } }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- MANUAL FALLBACK CSS -->
   <style>
-    /* Manual fallback if Tailwind fails */
-    body { background: #023047; color: white; text-align: center; padding: 2rem; }
-    button { background: #FB8500; color: #023047; padding: 0.5rem 1rem; border-radius: 9999px; }
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes roll { to { transform: rotate(360deg); } }
+    /* Force critical styles if Tailwind fails */
+    body { background: #023047; color: white; font-family: Arial; }
+    .force-orange { background: #FB8500 !important; color: #023047 !important; }
   </style>
 </head>
-<body>
-  <h1 class="text-4xl font-bold mb-4">Your Gateway to Social Media Acc</h1>
-  <button class="font-bold animate-pulse">Chase Wealth Now</button>
+<body class="bg-prussian-blue">
 
-  <!-- TEST TAILWIND -->
-  <p class="mt-8 text-blue-200">If this text is BLUE, Tailwind is working!</p>
+  <!-- 1️⃣ PRELOADER -->
+  <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-prussian-blue">
+    <div class="text-6xl font-bold text-ut-orange animate-roll">🎯</div>
+  </div>
+
+  <!-- 2️⃣ HERO SECTION -->
+  <section id="hero" class="hidden min-h-screen items-center justify-center p-4 text-center">
+    <h1 class="mb-6 text-4xl font-bold text-white md:text-6xl">
+      Your Gateway to 
+      <span class="inline-block overflow-hidden whitespace-nowrap border-r-4 border-ut-orange text-ut-orange animate-typing">
+        Social Media Accounts
+      </span>
+    </h1>
+    <button class="animate-pulse rounded-full bg-ut-orange px-8 py-3 text-lg font-bold text-prussian-blue hover:bg-select-yellow">
+      Chase Wealth Now
+    </button>
+  </section>
+
+  <!-- 3️⃣ PRODUCT CARDS -->
+  <section id="products" class="hidden bg-sky-blue py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="mb-12 text-center text-3xl font-bold text-prussian-blue">Marketplace</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:scale-105">
+          <div class="flex h-48 items-center justify-center bg-blue-green">
+            <span class="text-2xl text-white">Instagram 10K</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-prussian-blue">Instagram Account</h3>
+            <p class="mt-2 text-gray-600">Ready-to-use followers</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-xl font-bold text-ut-orange">₦2,500</span>
+              <button class="rounded-lg bg-prussian-blue px-4 py-2 text-white hover:bg-ut-orange">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4️⃣ LUDO GAME -->
+  <section id="ludo-game" class="hidden min-h-screen bg-prussian-blue py-12">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="mb-2 text-4xl font-bold text-ut-orange">OLAHUB LUDO</h2>
+      <p class="mb-8 text-white">Bet & Play. Win Real Money!</p>
+      <div class="mx-auto max-w-md rounded-xl bg-white/10 p-6 backdrop-blur-md">
+        <div class="mb-6 h-64 rounded-lg bg-blue-green/20 flex items-center justify-center">
+          <p class="text-white">Ludo Board UI Here</p>
+        </div>
+        <button class="rounded-full bg-ut-orange px-6 py-3 font-bold text-prussian-blue hover:bg-select-yellow">
+          Join Game (₦500 Bet)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5️⃣ ADMIN DASH -->
+  <section id="admin-dash" class="hidden min-h-screen bg-sky-blue py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="mb-8 text-3xl font-bold text-prussian-blue">Vendor Dashboard</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-xl bg-white p-6 shadow-lg">
+          <h3 class="text-xl font-bold text-blue-green">Today's Sales</h3>
+          <p class="my-4 text-4xl text-prussian-blue">₦24,500</p>
+          <p class="text-gray-600">Your Cut: <span class="font-bold text-ut-orange">₦4,900</span></p>
+        </div>
+        <div class="col-span-2 rounded-xl bg-white p-6 shadow-lg">
+          <h3 class="mb-4 text-xl font-bold text-blue-green">List New Product</h3>
+          <input type="text" placeholder="Product Name" class="mb-3 w-full rounded border p-2">
+          <input type="number" placeholder="Price (₦)" class="mb-3 w-full rounded border p-2">
+          <button class="rounded-lg bg-prussian-blue px-6 py-2 text-white hover:bg-ut-orange">
+            Submit Product
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🍔 NAV MENU -->
+  <nav class="fixed left-0 right-0 top-0 z-40 hidden bg-prussian-blue/90 p-4 backdrop-blur-md">
+    <div class="container mx-auto flex items-center justify-between">
+      <div class="text-2xl font-bold text-ut-orange">OLAHUB</div>
+      <button id="menu-btn" class="text-white">☰</button>
+      <div id="menu-items" class="absolute right-4 top-16 hidden w-48 rounded-lg bg-white/90 p-4 shadow-lg">
+        <a href="#hero" class="block py-2 text-prussian-blue hover:text-ut-orange">Home</a>
+        <a href="#products" class="block py-2 text-prussian-blue hover:text-ut-orange">Marketplace</a>
+        <a href="#ludo-game" class="block py-2 text-prussian-blue hover:text-ut-orange">Ludo</a>
+        <a href="#admin-dash" class="block py-2 text-prussian-blue hover:text-ut-orange">Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🛠️ JAVASCRIPT -->
+  <script>
+    // Hide preloader after 2s, show Hero
+    setTimeout(() => {
+      document.getElementById('preloader').classList.add('hidden');
+      document.getElementById('hero').classList.remove('hidden');
+      document.querySelector('nav').classList.remove('hidden');
+    }, 2000);
+
+    // Toggle menu
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('menu-items').classList.toggle('hidden');
+    });
+
+    // Navigate between sections
+    function showSection(sectionId) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.add('hidden');
+      });
+      document.getElementById(sectionId).classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
