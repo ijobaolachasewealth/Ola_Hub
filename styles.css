@@ -1,7 +1,6 @@
-/* TAILWIND IMPORTS */
+/* TAILWIND FALLBACK + CUSTOM CSS */
 @import url('https://cdn.tailwindcss.com');
 
-/* CUSTOM STYLES */
 :root {
   --sky-blue: #8ECAE6;
   --prussian-blue: #023047;
@@ -10,26 +9,36 @@
 
 /* PRELOADER */
 .preloader {
-  @apply fixed inset-0 z-50 flex items-center justify-center bg-prussian-blue;
-}
-.preloader .logo {
-  @apply text-6xl font-bold text-ut-orange animate-roll;
+  position: fixed;
+  inset: 0;
+  background: var(--prussian-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
 }
 
 /* HERO SECTION */
 #hero {
-  @apply min-h-screen flex items-center justify-center text-center;
-}
-.typewriter {
-  @apply inline-block overflow-hidden whitespace-nowrap border-r-4 border-ut-orange text-ut-orange;
-  animation: typing 3s steps(20) infinite;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* ANIMATIONS */
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+/* BUTTON */
+.cta-btn {
+  background: var(--ut-orange);
+  color: var(--prussian-blue);
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.125rem;
+  animation: pulse 2s infinite;
 }
-@keyframes roll {
-  to { transform: rotate(360deg); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
 }
