@@ -1,17 +1,21 @@
-/* COLORS */
+  /* ======== GLOBAL STYLES ======== */
 :root {
   --prussian-blue: #023047;
   --ut-orange: #FB8500;
-  --white: #ffffff;
+  --sky-blue: #8ECAE6;
+  --white: #FFFFFF;
 }
 
-/* RESET */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
-/* PRELOADER */
+.hidden {
+  display: none !important;
+}
+
+/* ======== PRELOADER ======== */
 #preloader {
   position: fixed;
   top: 0;
@@ -22,7 +26,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 1000;
 }
 
 #preloader .logo {
@@ -31,16 +35,56 @@ body {
   animation: roll 2s linear infinite;
 }
 
-/* HERO SECTION */
+/* ======== NAVIGATION ======== */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(2, 48, 71, 0.9);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--ut-orange);
+}
+
+#menu-items {
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  background: var(--white);
+  border-radius: 5px;
+  padding: 1rem;
+  display: none;
+}
+
+#menu-items a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--prussian-blue);
+  text-decoration: none;
+}
+
+#menu-items a:hover {
+  color: var(--ut-orange);
+}
+
+/* ======== HERO SECTION ======== */
 #hero {
   min-height: 100vh;
   background: var(--prussian-blue);
+  color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: var(--white);
   padding: 2rem;
 }
 
@@ -69,11 +113,43 @@ body {
   animation: pulse 1.5s infinite;
 }
 
-.cta-btn:hover {
-  opacity: 0.9;
+/* ======== MARKETPLACE ======== */
+#marketplace {
+  background: var(--sky-blue);
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-/* ANIMATIONS */
+.product-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* ======== LUDO GAME ======== */
+#ludo {
+  background: var(--prussian-blue);
+  color: var(--white);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* ======== ADMIN DASHBOARD ======== */
+#admin {
+  background: var(--sky-blue);
+  padding: 4rem 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ======== ANIMATIONS ======== */
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
