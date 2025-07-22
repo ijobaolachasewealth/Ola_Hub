@@ -1,21 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OLAHUB | All Sections</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style type="text/tailwindcss">
-    @keyframes breathe {
-      0%, 100% { opacity: 0.8; transform: scale(0.98); }
-      50% { opacity: 1; transform: scale(1.02); }
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sky-blue': '#8ECAE6',
+            'blue-green': '#219EBC',
+            'prussian-blue': '#023047',
+            'selective-yellow': '#FFB703',
+            'ut-orange': '#FB8500',
+          },
+          animation: {
+            'typewriter': 'typewriter 4s steps(20) infinite',
+            'glow': 'glow 2s ease-in-out infinite',
+            'roll': 'roll 2s linear infinite',
+          },
+          keyframes: {
+            typewriter: {
+              'from': { width: '0' },
+              'to': { width: '100%' },
+            },
+            glow: {
+              '0%, 100%': { 'text-shadow': '0 0 10px #FB8500' },
+              '50%': { 'text-shadow': '0 0 20px #FB8500' },
+            },
+            roll: {
+              '0%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg)' },
+            }
+          }
+        }
+      }
     }
-    .animated-chase {
-      animation: breathe 3s ease-in-out infinite;
-      text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
-    }
-  </style>
+  </script>
 </head>
-<body class="bg-[#f0f0f0]">
-  <h1 class="text-4xl font-bold text-center mt-20 animated-chase text-[#FFA500]">
-    CHASE YOUR DREAMS AND ACHIEVE YOUR GOALS
-  </h1>
+<body class="bg-prussian-blue">
+
+  <!-- 🌟 1. PRELOADER (shows first, then hides) -->
+  <div id="preloader" class="fixed inset-0 bg-prussian-blue flex items-center justify-center z-50">
+    <div class="text-6xl font-bold text-ut-orange animate-roll">
+      🎯 <!-- Replace with your logo -->
+    </div>
+    <p class="mt-4 text-white animate-pulse">Loading OLAHUB...</p>
+  </div>
+
+  <!-- 🌠 2. HERO SECTION -->
+  <section id="hero" class="min-h-screen flex items-center justify-center px-4 hidden">
+    <div class="text-center">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">
+        Your Gateway to 
+        <span class="text-ut-orange animate-typewriter overflow-hidden whitespace-nowrap inline-block">
+          Social Media Accounts
+        </span>
+      </h1>
+      <button class="bg-ut-orange hover:bg-selective-yellow text-prussian-blue font-bold py-3 px-8 rounded-full text-lg animate-glow">
+        Chase Wealth Now
+      </button>
+    </div>
+  </section>
+
+  <!-- 🛒 3. PRODUCT CARD -->
+  <section id="products" class="py-16 bg-sky-blue hidden">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-prussian-blue mb-12">Marketplace</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+          <div class="h-48 bg-blue-green flex items-center justify-center">
+            <span class="text-white text-2xl">Instagram 10K</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-prussian-blue">Instagram Account</h3>
+            <p class="text-gray-600 mt-2">Ready-to-use, 100% organic followers</p>
+            <div class="mt-4 flex justify-between items-center">
+              <span class="text-ut-orange font-bold text-xl">₦2,500</span>
+              <button class="bg-prussian-blue text-white py-2 px-4 rounded-lg hover:bg-ut-orange transition-colors">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Add more cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 🛠️ JS TO TOGGLE SECTIONS -->
+  <script>
+    // Hide preloader after 3s, show Hero
+    setTimeout(() => {
+      document.getElementById('preloader').classList.add('hidden');
+      document.getElementById('hero').classList.remove('hidden');
+    }, 3000);
+  </script>
 </body>
 </html>
